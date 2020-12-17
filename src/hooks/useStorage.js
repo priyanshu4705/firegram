@@ -1,14 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { projectStorage, projectFirestore, timestamp } from '../firebase/config';
+import { AuthContext } from '../auth/Auth';
+
 
 const useStorage = (file) => {
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
 
+    const { currentUser } = useContext(AuthContext);
+
     useEffect(() => {
         const storageRef = projectStorage.ref(file.name);
-        const collection = projectFirestore.collection('images');
+        const collection = projectFirestore.collection(`images-${currentUser.email}`);
         const createdAt = timestamp();
 
         storageRef.put(file).on('state_changed', (snap) => {

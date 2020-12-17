@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import useFirestore from '../hooks/useFirestore'
 import { motion } from 'framer-motion'
+import { AuthContext } from '../auth/Auth';
 
 function ImageGrid({ setSelectedImg }) {
 
-    const { docs } = useFirestore('images');
+    const { currentUser } = useContext(AuthContext);
+    const { docs } = useFirestore(`images-${currentUser.email}`);
     return (
         <div className="img-grid">
             {docs && docs.map(doc => (
