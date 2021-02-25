@@ -24,21 +24,23 @@ function Login({ history }) {
     const { currentUser } = useContext(AuthContext);
 
     if (currentUser) {
-            return <Redirect to='/'/>;
-        }
+        return <Redirect to='/' />;
+    }
 
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
-                <p>Email :</p>
+            <div className="title">
+                <h1>Firegram</h1>
+            </div>
+
+            <h1>LOG IN</h1>
+            <form className="box" onSubmit={handleLogin}>
                 <input type="email" name="email" placeholder="enter your email" />
-                <p>Password :</p>
                 <input type="password" name="password" placeholder="Password" />
                 <button type="submit">Log In</button>
             </form>
             <p>Do not have an account?{"\t\t"}<Link to="/signup">
-                <button variant="outline-primary">Sign up!</button>
+                <button className="change-option" variant="outline-primary">Sign up!</button>
             </Link></p>
         </div>
     )

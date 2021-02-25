@@ -30,16 +30,16 @@ body{
 }
 
 /* upload form styles */
-form{
+.upload, .box{
   margin: 30px auto 10px;
   text-align: center;
 }
-label input{
+.upload label input{
   height: 0;
   width: 0;
   opacity: 0;
 }
-label{
+.upload label{
   display: block;
   width: 30px;
   height: 30px;
@@ -51,7 +51,7 @@ label{
   font-weight: bold;
   font-size: 24px;
 }
-label:hover{
+.upload label:hover{
   background: var(--primary);
   color: white;
 }
@@ -110,4 +110,58 @@ label:hover{
   margin: 60px auto;
   box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
   border: 3px solid white;
+}
+
+.box input{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.24s;
+}
+
+.box input:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+
+.box button{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  width: 140px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.24s;
+  cursor: pointer;
+}
+
+.box button:hover{
+  color: white;
+  background-color: #2ecc71;
+}
+
+.change-option{
+  font-size: 20px;
+  font-weight: 500;
+  margin: auto;
+  border: none;
+  outline: none;
+  background: none;
+  text-align: center;
+  color: var(--primary);
+  cursor: pointer;
 }

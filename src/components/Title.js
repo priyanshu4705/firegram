@@ -9,7 +9,7 @@ function Title() {
     return (
         <div className="title">
             <h1>Firegram <span style={{float: 'right'}}>{currentUser.email}</span></h1>
-            <button style={{ float: 'right' }} onClick={() => app.auth().signOut()}>Sign out</button>
+            <button className="change-option" style={{ float: 'right' }} onClick={() => app.auth().signOut()}>Sign out</button>
             <h2>Upload your picture</h2>
         </div>
     )

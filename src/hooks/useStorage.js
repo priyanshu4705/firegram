@@ -28,7 +28,7 @@ const useStorage = (file) => {
             setUrl(url);
             console.log('updated url');
         })
-    }, [file]);
+    }, [file, currentUser]);
 
     return { progress, url, error };
 }

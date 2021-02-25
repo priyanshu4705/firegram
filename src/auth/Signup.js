@@ -19,16 +19,17 @@ const SignUp = ({ history }) => {
 
     return (
         <div>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSignUp}>
-                <p>Email :</p>
+            <div className="title">
+                <h1>Firegram</h1>
+            </div>
+            <h1>SIGN UP</h1>
+            <form className="box" onSubmit={handleSignUp}>
                 <input type="email" name="email" placeholder="enter your email" />
-                <p>Password :</p>
                 <input type="password" name="password" placeholder="Password" />
                 <button type="submit">Sign Up</button>
             </form>
             <p>Already have an account?{"\t\t"}<Link to="/login">
-                <button variant="outline-primary">Log In</button>
+                <button className="change-option" variant="outline-primary">Log In!</button>
             </Link></p>
         </div>
     );
